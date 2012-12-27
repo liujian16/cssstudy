@@ -1,0 +1,50 @@
+<!DOCTPYE html>
+</html>
+<head>
+<style>
+
+
+
+div.black_cell{
+//float:left;
+width:20px;
+height:20px;
+background-color:blue;
+display:inline-block;
+margin:0px;
+}
+div.white_cell{
+//float:left;
+width:20px;
+height:20px;
+background-color:black;
+display:inline-block;
+margin:0px;
+}
+div.row{
+//clear:both;
+padding:0px;
+}
+</style>
+</head>
+<body>
+	<script>
+			var fontdef = new Array(3104, 1883247100, -14403292, 1442615588, 301736016, -61593510, 1218326672, 689095198);
+		  for(var i=0;i<fontdef.length;i++){
+		  	
+		  		outputrow(fontdef[i]>>>16);
+					outputrow(fontdef[i]);
+		  }		
+		  function outputrow(i)	{
+		  	document.write('<div class="row">');
+		  	  for(var j=0;j<16;j++){
+		  	  	var c = "black_cell"
+		  	  		if((i & 1 << (15-j))>0)
+		  	  			  c = "white_cell" 
+		  	  		document.write('<div class=\"'+c+'\"></div>');
+		  	  }
+		  		document.write("</div>");
+		  }
+	</script>
+</body>
+</html>
